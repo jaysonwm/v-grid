@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="grid_parent_1">
+			<div class="grid" style="background: black; height: 400px;"></div>
+			<a href="http://www.google.com"><img class="grid" src="dummy.jpg" alt="" /></a>
+			<div class="grid" style="background: red; height: 500px;"></div>
+			<div class="grid" style="background: green; height: 300px;"></div>
+			<div class="grid" style="background: blue; height: 600px;"></div>
+			<div class="grid" style="background: yellow; height: 200px;"></div>
+			<div class="grid" style="background: grey; height: 550px;"></div>
+			<div class="grid" style="background: brown; height: 250px;"></div>
+			<div class="grid" style="background: gold; height: 400px;"></div>
+			<div class="grid" style="background: #213213; height: 400px;"></div>
+			<div class="grid" style="background: #123123; height: 400px;"></div>
+		</div>
+		<div id="grid_parent_2">
+			<img class="grid" src="dummy2.jpg" alt="" />
+			<div class="grid" style="background: #a1b1aa; height: 400px;"></div>
+			<div class="grid" style="background: black; height: 400px;"></div>
+			<img class="grid" src="dummy.jpg" alt="" />
+			<div class="grid" style="background: red; height: 500px;"></div>
+			<div class="grid" style="background: green; height: 300px;"></div>
+			<div class="grid" style="background: blue; height: 600px;"></div>
+			<div class="grid" style="background: yellow; height: 200px;"></div>
+		</div>
+		<script src="script.js"></script>
+		<script>
+			window.onload = function(){
+				vgrid('grid_parent_1','grid',{
+					gap : 20,
+					item_per_row : 5	
+				});
+
+				vgrid('grid_parent_2','grid');
+			}
+		</script>
+	</body>
+</html>
