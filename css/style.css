@@ -20,10 +20,10 @@ section {
   padding: 20px 0;
   border-bottom: 1px solid black;
 }
-section *:first-child {
+section > *:first-child {
   margin-top: 0;
 }
-section *:last-child {
+section > *:last-child {
   margin-bottom: 0;
 }
 span {
@@ -62,12 +62,16 @@ span {
 }
 code {
   font-size: 14px;
+  font-family: Consolas,monaco,monospace;
   background-color: rgba(86, 86, 86, 0.5);
-  3border-radius: 10px;
   display: block;
   margin: 20px 0;
   padding: 20px;
   border-radius: 10px;
+}
+code .comment {
+  color: #ccc;
+  display: inline;
 }
 .options {
   width: 100%;
@@ -83,8 +87,4 @@ code {
 }
 .options td {
   padding: 10px;
-}
-.para {
-  padding: 10px;
-  border: 10px solid red;
 }

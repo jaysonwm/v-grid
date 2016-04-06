@@ -3,42 +3,190 @@
 	<head>
 		<title></title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="./css/style.css">
+		<!--[if lt IE 9]>
+		  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 	</head>
 	<body>
-		<div id="grid_parent_1">
-			<div class="grid" style="background: black; height: 400px;"></div>
-			<a href="http://www.google.com"><img class="grid" src="dummy.jpg" alt="" /></a>
-			<div class="grid" style="background: red; height: 500px;"></div>
-			<div class="grid" style="background: green; height: 300px;"></div>
-			<div class="grid" style="background: blue; height: 600px;"></div>
-			<div class="grid" style="background: yellow; height: 200px;"></div>
-			<div class="grid" style="background: grey; height: 550px;"></div>
-			<div class="grid" style="background: brown; height: 250px;"></div>
-			<div class="grid" style="background: gold; height: 400px;"></div>
-			<div class="grid" style="background: #213213; height: 400px;"></div>
-			<div class="grid" style="background: #123123; height: 400px;"></div>
-		</div>
-		<div id="grid_parent_2">
-			<img class="grid" src="dummy2.jpg" alt="" />
-			<div class="grid" style="background: #a1b1aa; height: 400px;"></div>
-			<div class="grid" style="background: black; height: 400px;"></div>
-			<img class="grid" src="dummy.jpg" alt="" />
-			<div class="grid" style="background: red; height: 500px;"></div>
-			<div class="grid" style="background: green; height: 300px;"></div>
-			<div class="grid" style="background: blue; height: 600px;"></div>
-			<div class="grid" style="background: yellow; height: 200px;"></div>
-		</div>
-		<script src="script.js"></script>
+		<section id="intro">
+			<h1>v-grid.js</h1>
+			<span class="version">
+				Version 1.0.0<br>
+				<a href="https://github.com/jaysonwm/v-grid" target="_blank">Github</a>
+			</span>
+			<br>
+			<span>
+				Place anything you want vertically using a grid layout.
+			</span>
+			<div id="demo_grid">
+				<img class="grid" src="./img/dummy(1).jpg" alt="">
+				<img class="grid" src="./img/dummy(2).jpg" alt="">
+				<img class="grid" src="./img/dummy(3).jpg" alt="">
+				<img class="grid" src="./img/dummy(4).jpg" alt="">
+				<img class="grid" src="./img/dummy(5).jpg" alt="">
+				<img class="grid" src="./img/dummy(6).jpg" alt="">
+				<img class="grid" src="./img/dummy(7).jpg" alt="">
+				<img class="grid" src="./img/dummy(8).jpg" alt="">
+				<img class="grid" src="./img/dummy(9).jpg" alt="">
+				<img class="grid" src="./img/dummy(10).jpg" alt="">
+				<img class="grid" src="./img/dummy(11).jpg" alt="">
+				<img class="grid" src="./img/dummy(12).jpg" alt="">
+			</div>
+			<span class="mini_note"><i>** Images from Google Images</i></span>
+		</section>
+		<section id="usage">
+			<h1>&lt;Usage&gt;</h1>
+			<span>In your HTML code, surround your target nodes with a parent node. Declare an 'id' for parent node and 'class' for target node. Just like the code below.</span>
+			<code>
+				&lt;div id="parent_node"&gt;<br>
+				&nbsp;&nbsp;&lt;img class="target_node" src="photo.jpg" /&gt;<br>
+				&nbsp;&nbsp;&lt;img class="target_node" src="photo2.jpg" /&gt;<br>
+				&nbsp;&nbsp;...<br>
+				&lt;/div&gt;
+			</code>
+			<span>Then include the following in your project.</span>
+			<code>
+				<span class="comment">// CSS, declare the following at your own CSS file.</span><br>
+				#parent_node{<br>
+				&nbsp;&nbsp;position: relative;<br>
+				&nbsp;&nbsp;overflow: hidden;<br>
+				}<br><br>
+				#target_node{<br>
+				&nbsp;&nbsp;position: absolute;<br>
+				&nbsp;&nbsp;overflow: hidden;<br>
+				}<br><br>
+
+				<span class="comment">// JS</span><br>
+				&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"&gt;&lt;/script&gt; <span class="comment">// skip this if you have it already</span><br>
+				&lt;script src="script2-min.js"&gt;&lt;/script&gt;
+			</code>
+			<span>In your window.onload function call, add a 'vgrid' function call like below.</span>
+			<code>
+				$('#parent_node').vgrid('.target_node');<br/>
+				<!-- vgrid(parent_node's id, target_nodes' class);<br>-->
+			</code>
+			<span>...and you're done!</span>
+		</section>
+		<section id="advance">
+			<h1>Options</h1>
+			<table class="options" border="1">
+				<thead>
+					<tr>
+						<th width="180px">Options : Type</th>
+						<th>Default</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>gap : number</td>
+						<td>10</td>
+						<td>Gap between item, and it is measured in pixel. Just declare it without 'px'.</td>
+					</tr>
+					<tr>
+						<td>item_per_row: number</td>
+						<td>6</td>
+						<td>The number of item per row. Width of each item will be calculated according to it.</td>
+					</tr>
+				</tbody>	
+			</table>
+			<span>Here's how to use them.</span>
+			<code>
+				$('#parent_node').vgrid('.target_node',{<br>
+				&nbsp;&nbsp;gap : 10,<br>
+				&nbsp;&nbsp;item_per_row : 4<br>
+				});<br>
+				<!-- vgrid('parent_node','target_node',{<br>
+				&nbsp;&nbsp;gap : 20<br>
+				&nbsp;&nbsp;item_per_row : 10<br>
+				}) -->
+			</code>
+		</section>
+		<section id="extra">
+			<span>...and when I mean anything, I seriously mean ANYTHING! =D</span>
+			<div id="extra_demo">
+				<p class="grid para" style="text-align: justify;padding:10px;
+	border: 10px solid #565656;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus lacus vel ultrices congue. Morbi non iaculis libero. Vestibulum malesuada eros enim, vitae lacinia mauris gravida et. Sed vehicula metus nulla, sed porttitor <b style="font-size: 36px;">Paragraph</b> est dictum vel. Ut fringilla lorem nibh, at feugiat enim vehicula at. Nulla purus lorem, laoreet id arcu id, imperdiet semper nulla. Pellentesque non tempor tortor. Integer facilisis, eros vel euismod tempor, felis sem pharetra arcu, non faucibus lectus orci vel risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				<h1 class="grid" style="font-size: 100px; text-align: center; border: 5px solid #565656;"> H 1 </h1>
+				<span class="grid" style="text-align: justify; display: block">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus lacus vel <b style="font-size: 36px;">Span</b> Nulla purus lorem, laoreet id arcu id felis sem pharetra arcu, non faucibus lectus orci vel risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+				<a class="grid" href="http://jaysonwm.weebly.com/" style="font-size: 36px; color: black; border: 3px solid #fff; text-align: center" >JAYSONWM</a></span>
+				<svg class="grid" style="height: 100px;">
+				  <rect x="0" y="0" width="300" height="100" style="fill:transparent ;stroke-width:3;stroke:#565656;" />
+				  <text x="90" y="75" fill="black" style="font-size: 48px">S V G</text>
+				  Sorry, your browser does not support inline SVG.  
+				</svg>
+				<a href="#"><img class="grid" src="./img/dummy(2).jpg" alt=""></a>
+				<canvas id="myCanvas" class="grid" height="90"></canvas>
+				<ul class="grid">
+					<li>Vegetables</li>
+					<li>Meatballs</li>
+					<li>Parmesan Cheese</li>
+					<li>Spaghetti</li>
+				</ul>
+				<ol class="grid">
+					<li>Eat</li>
+					<li>Sleep</li>
+					<li>Sports</li>
+					<li>Work</li>
+				</ol>
+				<table class="grid" border="1" style="text-align: center">
+					<tr>
+						<td>Male</td>
+						<td>1000</td>
+					</tr>
+					<tr>
+						<td>Female</td>
+						<td>1200</td>
+					</tr>
+				</table>
+				<textarea name="" id="" cols="30" rows="15" class="grid" placeholder="Type something here on this textarea..." style="font-size: 20px; resize: none"></textarea>
+			</div>
+		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<!--<script>
+      if (!window.jQuery) {
+        document.write('<script src="./js/jquery-1.12.3.min.js"><\/script>'); 
+        console.log("Local jQuery loaded.");
+      }
+    </script>-->
+		<script src="./js/v-grid-min.js"></script>
+		<!-- <script src="script.js"></script> -->
 		<script>
+			try{
+				var c = document.getElementById("myCanvas");
+				var ctx = c.getContext("2d");
+				ctx.fillStyle = "#000000";
+				ctx.font = "30px Arial";
+				ctx.fillText("C A N V A S",50,50);
+				ctx.strokeRect(0,0,300,75);
+			} catch(err){
+				console.log(err);
+			}
+
 			window.onload = function(){
-				vgrid('grid_parent_1','grid',{
-					gap : 20,
-					item_per_row : 5	
+				// JavaScript - script.js
+				// vgrid('demo_grid','grid',{
+				// 	gap : 10,
+				// 	item_per_row : 4	
+				// });
+
+				// vgrid('extra_demo', 'grid',{
+				// 	gap : 20,
+				// 	item_per_row: 3
+				// });
+
+				// jQuery
+				$('#demo_grid').vgrid('.grid',{
+					gap : 10,
+					item_per_row : 4
 				});
 
-				vgrid('grid_parent_2','grid');
-			}
+				$('#extra_demo').vgrid('.grid',{
+					gap : 20,
+					item_per_row : 3
+				});
+			};
 		</script>
 	</body>
 </html>
