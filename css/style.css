@@ -1,0 +1,90 @@
+body {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+  background-color: #ccc;
+}
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+  display: block;
+}
+section {
+  padding: 20px 0;
+  border-bottom: 1px solid black;
+}
+section *:first-child {
+  margin-top: 0;
+}
+section *:last-child {
+  margin-bottom: 0;
+}
+span {
+  display: block;
+  line-height: 1.5;
+}
+#intro {
+  text-align: center;
+  margin-top: 80px;
+}
+#intro .version {
+  font-size: 14px;
+}
+#intro h1 {
+  font-weight: normal;
+  font-size: 56px;
+  margin: 0px;
+}
+.grid {
+  position: absolute;
+  overflow: hidden;
+}
+#demo_grid,
+#extra_demo {
+  width: 1000px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+.mini_note {
+  font-size: 12px;
+  text-align: left;
+}
+code {
+  font-size: 14px;
+  background-color: rgba(86, 86, 86, 0.5);
+  3border-radius: 10px;
+  display: block;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+}
+.options {
+  width: 100%;
+  margin: 20px 0;
+  font-size: 14px;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+.options th {
+  font-size: 1.3em;
+  text-align: left;
+  padding: 10px;
+}
+.options td {
+  padding: 10px;
+}
+.para {
+  padding: 10px;
+  border: 10px solid red;
+}
